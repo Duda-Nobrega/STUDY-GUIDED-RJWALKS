@@ -1,0 +1,14 @@
+# Pasta de configurações temporárias do Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build e dependências
+bin/
+obj/
+packages/
+
+# Arquivos do sistema
+*.log
+*.DS_Store
+Thumbs.db
