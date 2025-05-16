@@ -3,12 +3,8 @@ using RJWalks.API.Models.Domain;
 
 namespace RJWalks.API.Data
 {
-    public class RJWalsDBContext : DbContext
+    public class RJWalksDBContext(DbContextOptions dbContextOptions) : DbContext(dbContextOptions)
     {
-        public RJWalsDBContext(DbContextOptions dbContextOptions): base(dbContextOptions)
-        {
-            
-        }
 
         //All of these properties represens collection inside our database
         public DbSet<Difficulty> Difficulties { get; set; }

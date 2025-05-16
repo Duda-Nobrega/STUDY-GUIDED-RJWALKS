@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<RJWalsDBContext>(options =>
+builder.Services.AddDbContext<RJWalksDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("RJWalksConnectionString")));
 
 var app = builder.Build();
