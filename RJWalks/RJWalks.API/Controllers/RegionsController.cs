@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RJWalks.API.Data;
 using RJWalks.API.Models.Domain;
 using RJWalks.API.Models.DTOs;
+using RJWalks.API.Repositories;
 
 namespace RJWalks.API.Controllers
 {
@@ -13,17 +15,18 @@ namespace RJWalks.API.Controllers
     public class RegionsController : ControllerBase
     {
         private readonly RJWalksDBContext dBContext;
+        private readonly IRegionRepository regionRepository;
 
-        public RegionsController(RJWalksDBContext dBContext)
+        public RegionsController(RJWalksDBContext dBContext, IRegionRepository regionRepository)
         {
             this.dBContext = dBContext;
+            this.regionRepository = regionRepository;
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             //Get data from DataBase - Domains Models
-            var regions = dBContext.Regions.ToList();
-
+            var regions = await regionRepository.GetAllAsync();
             //Map domain model to dto
             var regionsDto = new List<RegionDto>();
 
@@ -46,9 +49,9 @@ namespace RJWalks.API.Controllers
         //Get Region by ID
         [HttpGet]
         [Route("{id:guid}")]
-        public IActionResult GetbyId([FromRoute] Guid id)
+        public async Task<IActionResult> GetbyId([FromRoute] Guid id)
         {   //Get Region Domain Modal from database
-            var regionDomain = dBContext.Regions.Find(id);
+            var regionDomain = await regionRepository.GetByIdAsync(id) ;
 
             if(regionDomain == null)
             {
@@ -72,7 +75,7 @@ namespace RJWalks.API.Controllers
         //POST to create new region
         [HttpPost]
 
-        public IActionResult Create([FromBody] AddRegionRequestDto addRegionRequestDto)
+        public async Task<IActionResult> Create([FromBody] AddRegionRequestDto addRegionRequestDto)
         {
             //Map or Convert the DTO to Domain Model
 
@@ -85,9 +88,8 @@ namespace RJWalks.API.Controllers
 
             //Use Domain model to create region using DBContext
 
-            dBContext.Regions.Add(regionDomainModel);
-
-            dBContext.SaveChanges();
+            await regionRepository.CreateAsync(regionDomainModel) ;
+            await dBContext.SaveChangesAsync();
 
             //map domain model back to dto
 
@@ -106,23 +108,21 @@ namespace RJWalks.API.Controllers
         //Update Region -> PUT: https:localhost/api/regions/{id}
         [HttpPut]
         [Route("{id:guid}")]
-        public IActionResult Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
+        public async Task <IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
         {
-            //check if the region exists
-            var regionDomainModel = dBContext.Regions.FirstOrDefault(x => x.Id == id);
-
-            if (regionDomainModel == null)
-            {
-                return NotFound();
-            }
 
             //Map dto to domain model
 
-            regionDomainModel.Code = updateRegionRequestDto.Code;
-            regionDomainModel.Name = updateRegionRequestDto.Name;
-            regionDomainModel.RegionImgURl = updateRegionRequestDto.RegionImgURl;
+            var regionDomailModel = new Region
+            {
+                Code = updateRegionRequestDto.Code,
+                Name = updateRegionRequestDto.Name,
+                RegionImgURl = updateRegionRequestDto.RegionImgURl
+            };
 
-            dBContext.SaveChanges();
+            var regionDomainModel = await regionRepository.UpdateAsync(id, regionDomailModel);
+
+            await dBContext.SaveChangesAsync();
 
             //Convert Domain Model to DTO
 
@@ -136,6 +136,28 @@ namespace RJWalks.API.Controllers
 
             return Ok();
         }
+        //Delete Region
+        //DELETE: https://localhost:123/api/regions/{id}
+
+        [HttpDelete]
+        [Route("{id:guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
+        {
+            var regionDomainModel = await regionRepository.DeleteAsync(id);
+
+            if (regionDomainModel == null) return NotFound();
+
+            var RegionDTO = new RegionDto
+            {
+                Id = regionDomainModel.Id,
+                Code = regionDomainModel.Code,
+                Name = regionDomainModel.Name,
+                RegionImgURl = regionDomainModel.RegionImgURl
+            };
+
+            return Ok(RegionDTO);
+        }
+
 
     }
 }

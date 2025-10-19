@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RJWalks.API.Data;
+using RJWalks.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RJWalksDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("RJWalksConnectionString")));
+builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
 
 var app = builder.Build();
 
