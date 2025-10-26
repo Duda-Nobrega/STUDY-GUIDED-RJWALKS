@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RJWalks.API.Data;
@@ -16,34 +17,20 @@ namespace RJWalks.API.Controllers
     {
         private readonly RJWalksDBContext dBContext;
         private readonly IRegionRepository regionRepository;
+        private readonly IMapper mapper;
 
-        public RegionsController(RJWalksDBContext dBContext, IRegionRepository regionRepository)
+        public RegionsController(RJWalksDBContext dBContext, IRegionRepository regionRepository, IMapper mapper)
         {
             this.dBContext = dBContext;
             this.regionRepository = regionRepository;
+            this.mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            //Get data from DataBase - Domains Models
             var regions = await regionRepository.GetAllAsync();
-            //Map domain model to dto
-            var regionsDto = new List<RegionDto>();
 
-            foreach (var region in regions) 
-            {
-                regionsDto.Add(new RegionDto()
-                {
-                    Id = region.Id,
-                    Code = region.Code,
-                    Name = region.Name,
-                    RegionImgURl = region.RegionImgURl,
-                });
-            }
-
-            // Return DTOS back to the client
-
-            return Ok(regionsDto);
+            return Ok(mapper.Map<List<RegionDto>>(regions));
         }
 
         //Get Region by ID
@@ -51,25 +38,13 @@ namespace RJWalks.API.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> GetbyId([FromRoute] Guid id)
         {   //Get Region Domain Modal from database
-            var regionDomain = await regionRepository.GetByIdAsync(id) ;
+            var regionDomain = await regionRepository.GetByIdAsync(id);
 
-            if(regionDomain == null)
+            if (regionDomain == null)
             {
                 return NotFound();
             }
-            //map the region domain model to region dto
-
-            var RegionDto = new RegionDto
-            {
-                Id = regionDomain.Id,
-                Code = regionDomain.Code,
-                Name = regionDomain.Name,
-                RegionImgURl = regionDomain.RegionImgURl
-            };
-
-            //Return DTO back to client
-
-            return Ok(RegionDto);
+            return Ok(mapper.Map<RegionDto>(regionDomain));
         }
 
         //POST to create new region
@@ -79,27 +54,16 @@ namespace RJWalks.API.Controllers
         {
             //Map or Convert the DTO to Domain Model
 
-            var regionDomainModel = new Region
-            {
-                Code = addRegionRequestDto.Code,
-                Name = addRegionRequestDto.Name,
-                RegionImgURl = addRegionRequestDto.RegionImgURl
-            };
+            var regionDomainModel = mapper.Map<Region>(addRegionRequestDto);
 
             //Use Domain model to create region using DBContext
 
-            await regionRepository.CreateAsync(regionDomainModel) ;
+            await regionRepository.CreateAsync(regionDomainModel);
             await dBContext.SaveChangesAsync();
 
             //map domain model back to dto
 
-            var regionDTO = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImgURl = regionDomainModel.RegionImgURl
-            };
+            var regionDTO = mapper.Map<RegionDto>(regionDomainModel);
 
             //In post methods it responds with 201 instead of 200
             return CreatedAtAction(nameof(GetbyId), new { id = regionDomainModel.Id }, regionDomainModel);
@@ -108,17 +72,12 @@ namespace RJWalks.API.Controllers
         //Update Region -> PUT: https:localhost/api/regions/{id}
         [HttpPut]
         [Route("{id:guid}")]
-        public async Task <IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
         {
 
             //Map dto to domain model
 
-            var regionDomailModel = new Region
-            {
-                Code = updateRegionRequestDto.Code,
-                Name = updateRegionRequestDto.Name,
-                RegionImgURl = updateRegionRequestDto.RegionImgURl
-            };
+            var regionDomailModel = mapper.Map<Region>(updateRegionRequestDto);
 
             var regionDomainModel = await regionRepository.UpdateAsync(id, regionDomailModel);
 
@@ -126,15 +85,7 @@ namespace RJWalks.API.Controllers
 
             //Convert Domain Model to DTO
 
-            var regionDTO = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImgURl = regionDomainModel.RegionImgURl
-            };
-
-            return Ok();
+            return Ok(mapper.Map<RegionDto>(regionDomainModel));
         }
         //Delete Region
         //DELETE: https://localhost:123/api/regions/{id}
@@ -147,15 +98,9 @@ namespace RJWalks.API.Controllers
 
             if (regionDomainModel == null) return NotFound();
 
-            var RegionDTO = new RegionDto
-            {
-                Id = regionDomainModel.Id,
-                Code = regionDomainModel.Code,
-                Name = regionDomainModel.Name,
-                RegionImgURl = regionDomainModel.RegionImgURl
-            };
+            
 
-            return Ok(RegionDTO);
+            return Ok(mapper.Map<RegionDto>(regionDomainModel));
         }
 
 

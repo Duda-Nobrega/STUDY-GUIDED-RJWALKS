@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using RJWalks.API.Data;
+using RJWalks.API.Mappings;
 using RJWalks.API.Repositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +16,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RJWalksDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("RJWalksConnectionString")));
 builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
-
+builder.Services.AddScoped<IWalkRepository, SQLWalkRepository>();
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfiles>());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
