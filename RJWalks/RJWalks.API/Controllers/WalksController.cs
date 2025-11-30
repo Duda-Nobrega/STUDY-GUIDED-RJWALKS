@@ -37,5 +37,54 @@ namespace RJWalks.API.Controllers
             //map DomainModel to dto
             return Ok(mapper.Map<WalkDTO>(walkDomainModel));
         }
+
+        //Get Walks
+        //GET: /api/walks
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var walksDomainModel = await walkRepository.GetAllAsync();
+
+            //Map domain para dto
+            return Ok(mapper.Map<List<WalkDTO>>(walksDomainModel));
+        }
+
+        //Get walk by ID
+        //GET: /api/Walks/{id} [
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetbyId([FromRoute] Guid id)
+        {
+            var WalkDomainModel = await walkRepository.GetbyIdAsync(id);
+
+            if (WalkDomainModel == null)
+            {
+                return NotFound();
+            }
+
+            //Map domain to dto
+            return Ok(mapper.Map<WalkDTO>(WalkDomainModel));
+
+        }
+
+        //Update Walk by id
+        //PUT: /api/Walks/{id}
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateWalkRequestDTO updateWalkRequest)
+        {
+            //Map DTO to domain
+            var WalkDomainModel = mapper.Map<Walk>(updateWalkRequest);
+
+            WalkDomainModel = await walkRepository.UpdateAsync(id, WalkDomainModel);
+             
+            if (WalkDomainModel == null)
+            {
+                return NotFound();
+            }
+
+            //Map Domain Model to DTO
+            return Ok(mapper.Map<UpdateWalkRequestDTO>(WalkDomainModel));
+        }
     }
 }
