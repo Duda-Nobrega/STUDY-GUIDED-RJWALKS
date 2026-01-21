@@ -86,5 +86,19 @@ namespace RJWalks.API.Controllers
             //Map Domain Model to DTO
             return Ok(mapper.Map<UpdateWalkRequestDTO>(WalkDomainModel));
         }
+
+        //DELETE walk by id
+        //DELETE: /api/Walks/{id}
+        [HttpDelete]
+        [Route("{id:guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
+        {
+           var deletedWalkDomainModel =  await walkRepository.DeleteAsync(id);
+
+           if (deletedWalkDomainModel == null) return NotFound();
+
+           //Map Domain Model to dto
+           return Ok(mapper.Map<WalkDTO?>(deletedWalkDomainModel));
+        }
     }
 }

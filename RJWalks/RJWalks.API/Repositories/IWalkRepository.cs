@@ -9,6 +9,7 @@ namespace RJWalks.API.Repositories
         Task<Walk?> GetbyIdAsync(Guid id);
 
         Task<Walk?>UpdateAsync(Guid id, Walk walk);
+        Task<Walk?>DeleteAsync(Guid id);
 
     }
 }
