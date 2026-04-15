@@ -3,7 +3,7 @@ using RJWalks.API.Models.Domain;
 
 namespace RJWalks.API.Data
 {
-    public class RJWalksDBContext(DbContextOptions dbContextOptions) : DbContext(dbContextOptions)
+    public class RJWalksDBContext(DbContextOptions<RJWalksDBContext> dbContextOptions) : DbContext(dbContextOptions)
     {
 
         //All of these properties represens collection inside our database
