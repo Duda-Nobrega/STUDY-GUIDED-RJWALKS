@@ -7,6 +7,7 @@ using RJWalks.API.Data;
 using RJWalks.API.Mappings;
 using RJWalks.API.Repositories;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,35 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "RJ Walks API", Version = "v1" });
+    options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = JwtBearerDefaults.AuthenticationScheme
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = JwtBearerDefaults.AuthenticationScheme
+                },
+                Scheme = JwtBearerDefaults.AuthenticationScheme,
+                Name = JwtBearerDefaults.AuthenticationScheme,
+                In = ParameterLocation.Header
+            },
+            new List<string>()
+        }
+    });
+});
 
 builder.Services.AddDbContext<RJWalksDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("RJWalksConnectionString")));
@@ -24,8 +53,9 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("RJWalksConnectio
 builder.Services.AddDbContext<RJWalksAuthDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("RJWalksAuthConectionString")));
 
-builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>(); 
+builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
 builder.Services.AddScoped<IWalkRepository, SQLWalkRepository>();
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<AutoMapperProfiles>());
 
@@ -40,8 +70,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireDigit = false;
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
-    options.Password.RequireNonAlphanumeric= false;
-    options.Password.RequiredLength= 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 8;
     options.Password.RequiredUniqueChars = 1;
 });
 

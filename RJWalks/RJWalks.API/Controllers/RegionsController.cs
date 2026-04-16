@@ -15,7 +15,7 @@ namespace RJWalks.API.Controllers
     //https://localhost:123/api/regions
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+   
     public class RegionsController : ControllerBase
     {
         private readonly RJWalksDBContext dBContext;
@@ -29,6 +29,7 @@ namespace RJWalks.API.Controllers
             this.mapper = mapper;
         }
         [HttpGet]
+        [Authorize(Roles ="Writer,Reader")]
         public async Task<IActionResult> GetAll()
         {
             var regions = await regionRepository.GetAllAsync();
@@ -39,6 +40,7 @@ namespace RJWalks.API.Controllers
         //Get Region by ID
         [HttpGet]
         [Route("{id:guid}")]
+        [Authorize(Roles = "Writer,Reader")]
         public async Task<IActionResult> GetbyId([FromRoute] Guid id)
         {   //Get Region Domain Modal from database
             var regionDomain = await regionRepository.GetByIdAsync(id);
@@ -53,6 +55,7 @@ namespace RJWalks.API.Controllers
         //POST to create new region
         [HttpPost]
         [ValidateModel]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create([FromBody] AddRegionRequestDto addRegionRequestDto)
         {
             
@@ -78,6 +81,7 @@ namespace RJWalks.API.Controllers
         [HttpPut]
         [ValidateModel]
         [Route("{id:guid}")]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequestDto)
         {
             //Map dto to domain model
@@ -98,6 +102,7 @@ namespace RJWalks.API.Controllers
 
         [HttpDelete]
         [Route("{id:guid}")]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var regionDomainModel = await regionRepository.DeleteAsync(id);
