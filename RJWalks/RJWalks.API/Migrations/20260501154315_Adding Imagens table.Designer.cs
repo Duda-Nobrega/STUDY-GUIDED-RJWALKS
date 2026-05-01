@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RJWalks.API.Data;
 
@@ -11,9 +12,11 @@ using RJWalks.API.Data;
 namespace RJWalks.API.Migrations
 {
     [DbContext(typeof(RJWalksDBContext))]
-    partial class RJWalsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260501154315_Adding Imagens table")]
+    partial class AddingImagenstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
