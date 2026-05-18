@@ -8,6 +8,7 @@ using RJWalks.API.Data;
 using RJWalks.API.Models.Domain;
 using RJWalks.API.Models.DTOs;
 using RJWalks.API.Repositories;
+using System.Text.Json;
 
 namespace RJWalks.API.Controllers
 {
@@ -21,20 +22,22 @@ namespace RJWalks.API.Controllers
         private readonly RJWalksDBContext dBContext;
         private readonly IRegionRepository regionRepository;
         private readonly IMapper mapper;
+        private readonly ILogger<RegionsController> logger;
 
-        public RegionsController(RJWalksDBContext dBContext, IRegionRepository regionRepository, IMapper mapper)
+        public RegionsController(RJWalksDBContext dBContext, IRegionRepository regionRepository, IMapper mapper, ILogger<RegionsController> logger)
         {
             this.dBContext = dBContext;
             this.regionRepository = regionRepository;
             this.mapper = mapper;
+            this.logger = logger;
         }
         [HttpGet]
-        [Authorize(Roles ="Writer,Reader")]
+        //[Authorize(Roles ="Writer,Reader")]
         public async Task<IActionResult> GetAll()
         {
-            var regions = await regionRepository.GetAllAsync();
+                var regions = await regionRepository.GetAllAsync();
 
-            return Ok(mapper.Map<List<RegionDto>>(regions));
+                return Ok(mapper.Map<List<RegionDto>>(regions));
         }
 
         //Get Region by ID
