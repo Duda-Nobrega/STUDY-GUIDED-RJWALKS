@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RJWalks.API", "RJWalks.API\RJWalks.API.csproj", "{0965F101-C8C5-46D3-BCE5-C514ED225260}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RjWalks.UI", "RjWalks.UI\RjWalks.UI.csproj", "{394F3216-105E-4949-9109-5DD3CC49E434}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0965F101-C8C5-46D3-BCE5-C514ED225260}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0965F101-C8C5-46D3-BCE5-C514ED225260}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0965F101-C8C5-46D3-BCE5-C514ED225260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{394F3216-105E-4949-9109-5DD3CC49E434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394F3216-105E-4949-9109-5DD3CC49E434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394F3216-105E-4949-9109-5DD3CC49E434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394F3216-105E-4949-9109-5DD3CC49E434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

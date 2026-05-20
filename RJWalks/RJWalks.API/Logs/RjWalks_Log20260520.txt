@@ -1,0 +1,488 @@
+2026-05-20 18:45:34.312 -03:00 [INF] User profile is available. Using 'C:\Users\mmari\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 18:45:34.959 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 18:45:35.069 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 18:45:35.070 -03:00 [INF] Hosting environment: Development
+2026-05-20 18:45:35.071 -03:00 [INF] Content root path: C:\Users\mmari\Documents\RJWalks\RJWalks\RJWalks.API
+2026-05-20 18:45:35.482 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 542.8424ms
+2026-05-20 18:45:35.496 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 18:45:35.496 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 18:45:35.496 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 18:45:35.507 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 5.4722ms
+2026-05-20 18:45:35.537 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 40.9565ms
+2026-05-20 18:45:35.706 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 209.9504ms
+2026-05-20 18:45:35.764 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 18:45:35.789 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.3678ms
+2026-05-20 18:45:44.021 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 18:45:44.217 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 18:45:44.264 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 18:45:44.868 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-20 18:45:50.014 -03:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 18:45:50.210 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 18:45:50.235 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 5962.9606ms
+2026-05-20 18:45:50.236 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 18:45:50.253 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 6235.4445ms
+2026-05-20 18:46:02.935 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/regions - application/json; charset=utf-8 58
+2026-05-20 18:46:02.940 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Create (RJWalks.API)'
+2026-05-20 18:46:02.962 -03:00 [INF] Route matched with {action = "Create", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RJWalks.API.Models.DTOs.AddRegionRequestDto) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 18:46:03.374 -03:00 [INF] Executed DbCommand (59ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Regions] ([Id], [Code], [Name], [RegionImgURl])
+VALUES (@p0, @p1, @p2, @p3);
+2026-05-20 18:46:03.399 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RJWalks.API.Models.Domain.Region'.
+2026-05-20 18:46:03.428 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Create (RJWalks.API) in 465.6054ms
+2026-05-20 18:46:03.428 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Create (RJWalks.API)'
+2026-05-20 18:46:03.429 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/regions - 201 null application/json; charset=utf-8 494.2109ms
+2026-05-20 18:46:52.062 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/regions - application/json; charset=utf-8 58
+2026-05-20 18:46:52.066 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Create (RJWalks.API)'
+2026-05-20 18:46:52.067 -03:00 [INF] Route matched with {action = "Create", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RJWalks.API.Models.DTOs.AddRegionRequestDto) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 18:46:52.155 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Regions] ([Id], [Code], [Name], [RegionImgURl])
+VALUES (@p0, @p1, @p2, @p3);
+2026-05-20 18:46:52.156 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RJWalks.API.Models.Domain.Region'.
+2026-05-20 18:46:52.157 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Create (RJWalks.API) in 89.7707ms
+2026-05-20 18:46:52.157 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Create (RJWalks.API)'
+2026-05-20 18:46:52.157 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/regions - 201 null application/json; charset=utf-8 95.9821ms
+2026-05-20 19:07:13.420 -03:00 [INF] User profile is available. Using 'C:\Users\mmari\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 19:07:13.784 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 19:07:13.862 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 19:07:13.863 -03:00 [INF] Hosting environment: Development
+2026-05-20 19:07:13.863 -03:00 [INF] Content root path: C:\Users\mmari\Documents\RJWalks\RJWalks\RJWalks.API
+2026-05-20 19:07:14.355 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 586.7494ms
+2026-05-20 19:07:14.379 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 19:07:14.381 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 19:07:14.382 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 19:07:14.392 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 7.4086ms
+2026-05-20 19:07:14.394 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 11.0417ms
+2026-05-20 19:07:14.514 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 132.344ms
+2026-05-20 19:07:14.568 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 19:07:14.599 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.0314ms
+2026-05-20 19:07:26.263 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:07:26.411 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:07:26.440 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:07:26.824 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-20 19:07:29.651 -03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:07:29.831 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:07:29.852 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 3406.5516ms
+2026-05-20 19:07:29.852 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:07:29.865 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 3605.7679ms
+2026-05-20 19:07:46.063 -03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/regions - application/json; charset=utf-8 49
+2026-05-20 19:07:46.066 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Create (RJWalks.API)'
+2026-05-20 19:07:46.075 -03:00 [INF] Route matched with {action = "Create", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(RJWalks.API.Models.DTOs.AddRegionRequestDto) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:07:46.253 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Regions] ([Id], [Code], [Name], [RegionImgURl])
+VALUES (@p0, @p1, @p2, @p3);
+2026-05-20 19:07:46.276 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RJWalks.API.Models.Domain.Region'.
+2026-05-20 19:07:46.294 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Create (RJWalks.API) in 219.1805ms
+2026-05-20 19:07:46.295 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Create (RJWalks.API)'
+2026-05-20 19:07:46.295 -03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/regions - 201 null application/json; charset=utf-8 231.6167ms
+2026-05-20 19:07:46.319 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:07:46.323 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:07:46.323 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:07:46.387 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:07:46.392 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:07:46.393 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 69.1864ms
+2026-05-20 19:07:46.393 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:07:46.393 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 74.0473ms
+2026-05-20 19:12:42.199 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:12:42.235 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:12:42.248 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:12:42.630 -03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:12:42.659 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:12:42.688 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 438.0507ms
+2026-05-20 19:12:42.688 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:12:42.691 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 511.8416ms
+2026-05-20 19:12:49.228 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:12:49.233 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:12:49.233 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:12:49.247 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:12:49.250 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:12:49.252 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 18.9661ms
+2026-05-20 19:12:49.253 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:12:49.254 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 26.2667ms
+2026-05-20 19:13:22.656 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 19:13:23.282 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 626.4755ms
+2026-05-20 19:13:23.348 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 19:13:23.353 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 4.7885ms
+2026-05-20 19:13:23.376 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 19:13:23.377 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 19:13:23.384 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 7.23ms
+2026-05-20 19:13:23.425 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.99ms
+2026-05-20 19:13:23.461 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:13:23.462 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:13:23.470 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:13:23.480 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:13:23.482 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:13:23.486 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 15.1304ms
+2026-05-20 19:13:23.486 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:13:23.486 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 25.9199ms
+2026-05-20 19:13:23.757 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 19:13:23.782 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.6007ms
+2026-05-20 19:20:11.681 -03:00 [INF] User profile is available. Using 'C:\Users\mmari\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 19:20:12.526 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 19:20:12.603 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 19:20:12.603 -03:00 [INF] Hosting environment: Development
+2026-05-20 19:20:12.603 -03:00 [INF] Content root path: C:\Users\mmari\Documents\RJWalks\RJWalks\RJWalks.API
+2026-05-20 19:20:13.035 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 533.9642ms
+2026-05-20 19:20:13.039 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 19:20:13.039 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 19:20:13.068 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 12.804ms
+2026-05-20 19:20:13.075 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 19:20:13.076 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 37.8729ms
+2026-05-20 19:20:13.176 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.3618ms
+2026-05-20 19:20:13.242 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 19:20:13.266 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.9325ms
+2026-05-20 19:20:43.952 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:20:44.126 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:20:44.159 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:20:44.579 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-20 19:20:48.316 -03:00 [INF] Executed DbCommand (105ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:20:48.411 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:20:48.427 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 4265.6369ms
+2026-05-20 19:20:48.428 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:20:48.437 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 4488.1597ms
+2026-05-20 19:30:24.796 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 19:30:24.852 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 57.4321ms
+2026-05-20 19:30:25.003 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 19:30:25.006 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 2.5227ms
+2026-05-20 19:30:25.013 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 19:30:25.017 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 3.1805ms
+2026-05-20 19:30:25.025 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 19:30:25.049 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.476ms
+2026-05-20 19:30:25.361 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 19:30:25.410 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.4069ms
+2026-05-20 19:30:29.946 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/a52ae299-4095-45b6-f3de-08deb6b9306f - null null
+2026-05-20 19:30:29.956 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:30:29.988 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:30:34.718 -03:00 [INF] Executed DbCommand (83ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:30:34.726 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:30:34.728 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 4740.1364ms
+2026-05-20 19:30:34.728 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:30:34.729 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/a52ae299-4095-45b6-f3de-08deb6b9306f - 200 null application/json; charset=utf-8 4783.4786ms
+2026-05-20 19:30:47.799 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:30:47.808 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:30:47.815 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:30:48.057 -03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:30:48.062 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:30:48.065 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 249.1927ms
+2026-05-20 19:30:48.065 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:30:48.066 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 266.6684ms
+2026-05-20 19:30:51.938 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:30:51.940 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:30:51.940 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:30:51.958 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:30:51.961 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:30:51.962 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 21.879ms
+2026-05-20 19:30:51.963 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:30:51.964 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 25.3436ms
+2026-05-20 19:38:49.677 -03:00 [INF] User profile is available. Using 'C:\Users\mmari\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 19:38:50.151 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 19:38:50.234 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 19:38:50.239 -03:00 [INF] Hosting environment: Development
+2026-05-20 19:38:50.239 -03:00 [INF] Content root path: C:\Users\mmari\Documents\RJWalks\RJWalks\RJWalks.API
+2026-05-20 19:38:50.737 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 616.2897ms
+2026-05-20 19:38:50.745 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 19:38:50.745 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 19:38:50.765 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 19.377ms
+2026-05-20 19:38:50.777 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 19:38:50.778 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 21.2801ms
+2026-05-20 19:38:50.830 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.5667ms
+2026-05-20 19:38:50.899 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 19:38:50.937 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.7109ms
+2026-05-20 19:38:55.111 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:38:55.236 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:38:55.257 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:38:55.679 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-20 19:38:58.611 -03:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:38:58.774 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:38:58.808 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 3545.2008ms
+2026-05-20 19:38:58.809 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:38:58.825 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 3715.5831ms
+2026-05-20 19:39:01.492 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:39:01.497 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:01.516 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:39:01.697 -03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:39:01.703 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:39:01.705 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 188.4155ms
+2026-05-20 19:39:01.705 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:01.706 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 214.3938ms
+2026-05-20 19:39:04.909 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - application/json; charset=utf-8 94
+2026-05-20 19:39:04.913 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Update (RJWalks.API)'
+2026-05-20 19:39:04.917 -03:00 [INF] Route matched with {action = "Update", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.Guid, RJWalks.API.Models.DTOs.UpdateRegionRequestDto) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:39:05.005 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:39:05.107 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Regions] SET [Code] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-05-20 19:39:05.130 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:39:05.132 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Update (RJWalks.API) in 214.2034ms
+2026-05-20 19:39:05.132 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Update (RJWalks.API)'
+2026-05-20 19:39:05.132 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 222.9771ms
+2026-05-20 19:39:05.162 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:39:05.162 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:05.163 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:39:05.169 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:39:05.174 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:39:05.175 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 12.4355ms
+2026-05-20 19:39:05.175 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:05.176 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 14.0902ms
+2026-05-20 19:39:10.596 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:39:10.598 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:10.598 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:39:10.610 -03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:39:10.615 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:39:10.616 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 18.1821ms
+2026-05-20 19:39:10.617 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:10.617 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 21.0433ms
+2026-05-20 19:39:56.913 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:39:56.914 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:56.914 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:39:56.940 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:39:56.951 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:39:56.951 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 37.1519ms
+2026-05-20 19:39:56.951 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:39:56.952 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 38.7857ms
+2026-05-20 19:40:04.135 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - application/json; charset=utf-8 103
+2026-05-20 19:40:04.137 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Update (RJWalks.API)'
+2026-05-20 19:40:04.138 -03:00 [INF] Route matched with {action = "Update", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.Guid, RJWalks.API.Models.DTOs.UpdateRegionRequestDto) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:04.149 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:40:04.163 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Regions] SET [RegionImgURl] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-05-20 19:40:04.163 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:40:04.164 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Update (RJWalks.API) in 25.8086ms
+2026-05-20 19:40:04.164 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Update (RJWalks.API)'
+2026-05-20 19:40:04.165 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 30.9927ms
+2026-05-20 19:40:04.189 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:40:04.190 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:04.190 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:04.195 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:40:04.199 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:40:04.200 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 9.4946ms
+2026-05-20 19:40:04.200 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:04.200 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 11.0661ms
+2026-05-20 19:40:05.557 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:40:05.557 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:40:05.557 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:05.562 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:40:05.567 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:40:05.568 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 11.1336ms
+2026-05-20 19:40:05.569 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:40:05.570 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 13.4412ms
+2026-05-20 19:40:07.582 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:40:07.582 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:07.582 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:07.588 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:40:07.593 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:40:07.595 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 11.9118ms
+2026-05-20 19:40:07.595 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:07.595 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 13.8383ms
+2026-05-20 19:40:13.607 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/f7248fc3-2585-4efb-8d1d-1c555f4087f6 - null null
+2026-05-20 19:40:13.608 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:13.608 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:13.620 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:40:13.626 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:40:13.628 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 19.258ms
+2026-05-20 19:40:13.628 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:13.629 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/f7248fc3-2585-4efb-8d1d-1c555f4087f6 - 200 null application/json; charset=utf-8 22.4272ms
+2026-05-20 19:40:16.832 -03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:44320/api/regions/f7248fc3-2585-4efb-8d1d-1c555f4087f6 - application/json; charset=utf-8 227
+2026-05-20 19:40:16.833 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Update (RJWalks.API)'
+2026-05-20 19:40:16.833 -03:00 [INF] Route matched with {action = "Update", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.Guid, RJWalks.API.Models.DTOs.UpdateRegionRequestDto) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:16.845 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:40:16.858 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Regions] SET [Code] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-05-20 19:40:16.859 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:40:16.860 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Update (RJWalks.API) in 27.1687ms
+2026-05-20 19:40:16.860 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Update (RJWalks.API)'
+2026-05-20 19:40:16.861 -03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:44320/api/regions/f7248fc3-2585-4efb-8d1d-1c555f4087f6 - 200 null application/json; charset=utf-8 28.8658ms
+2026-05-20 19:40:16.891 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/f7248fc3-2585-4efb-8d1d-1c555f4087f6 - null null
+2026-05-20 19:40:16.891 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:16.891 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:16.898 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:40:16.906 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:40:16.908 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 16.6779ms
+2026-05-20 19:40:16.908 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:40:16.909 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/f7248fc3-2585-4efb-8d1d-1c555f4087f6 - 200 null application/json; charset=utf-8 18.3811ms
+2026-05-20 19:40:19.449 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:40:19.450 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:40:19.450 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:40:19.457 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:40:19.460 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:40:19.460 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 10.678ms
+2026-05-20 19:40:19.461 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:40:19.461 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 11.7107ms
+2026-05-20 19:46:16.252 -03:00 [INF] User profile is available. Using 'C:\Users\mmari\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-20 19:46:16.815 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - null null
+2026-05-20 19:46:16.979 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-20 19:46:16.980 -03:00 [INF] Hosting environment: Development
+2026-05-20 19:46:16.980 -03:00 [INF] Content root path: C:\Users\mmari\Documents\RJWalks\RJWalks\RJWalks.API
+2026-05-20 19:46:17.307 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:46:17.440 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-20 19:46:17.469 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.js - null null
+2026-05-20 19:46:17.485 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - null null
+2026-05-20 19:46:17.527 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - 200 null text/html;charset=utf-8 703.1615ms
+2026-05-20 19:46:17.527 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.js - 200 null application/javascript;charset=utf-8 39.7944ms
+2026-05-20 19:46:17.532 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 56.5326ms
+2026-05-20 19:46:17.646 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:46:17.658 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - 200 null text/javascript; charset=UTF-8 172.7431ms
+2026-05-20 19:46:17.700 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:17.732 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - null null
+2026-05-20 19:46:17.763 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.9551ms
+2026-05-20 19:46:18.254 -03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-20 19:46:21.630 -03:00 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:46:21.715 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:46:21.729 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 4026.0208ms
+2026-05-20 19:46:21.729 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:46:21.737 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 4435.3166ms
+2026-05-20 19:46:24.619 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/a52ae299-4095-45b6-f3de-08deb6b9306f - null null
+2026-05-20 19:46:24.622 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:46:24.652 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:24.942 -03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:46:24.946 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:46:24.947 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 294.3988ms
+2026-05-20 19:46:24.947 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:46:24.948 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/a52ae299-4095-45b6-f3de-08deb6b9306f - 200 null application/json; charset=utf-8 329.2816ms
+2026-05-20 19:46:26.267 -03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/regions/a52ae299-4095-45b6-f3de-08deb6b9306f - null null
+2026-05-20 19:46:26.272 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Delete (RJWalks.API)'
+2026-05-20 19:46:26.283 -03:00 [INF] Route matched with {action = "Delete", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:26.456 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__Id_0
+2026-05-20 19:46:26.651 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Regions]
+OUTPUT 1
+WHERE [Id] = @p0;
+2026-05-20 19:46:26.689 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:46:26.692 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Delete (RJWalks.API) in 408.357ms
+2026-05-20 19:46:26.693 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Delete (RJWalks.API)'
+2026-05-20 19:46:26.693 -03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/regions/a52ae299-4095-45b6-f3de-08deb6b9306f - 200 null application/json; charset=utf-8 426.2382ms
+2026-05-20 19:46:26.732 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:46:26.734 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:46:26.735 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:26.745 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:46:26.756 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:46:26.758 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 22.817ms
+2026-05-20 19:46:26.758 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:46:26.759 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 27.8422ms
+2026-05-20 19:46:29.045 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:46:29.046 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:46:29.046 -03:00 [INF] Route matched with {action = "GetbyId", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetbyId(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:29.058 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__id_0
+2026-05-20 19:46:29.063 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:46:29.065 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API) in 18.9653ms
+2026-05-20 19:46:29.065 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetbyId (RJWalks.API)'
+2026-05-20 19:46:29.066 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 21.1694ms
+2026-05-20 19:46:29.852 -03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - null null
+2026-05-20 19:46:29.853 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.Delete (RJWalks.API)'
+2026-05-20 19:46:29.853 -03:00 [INF] Route matched with {action = "Delete", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:29.861 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+WHERE [r].[Id] = @__Id_0
+2026-05-20 19:46:29.877 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Regions]
+OUTPUT 1
+WHERE [Id] = @p0;
+2026-05-20 19:46:29.878 -03:00 [INF] Executing OkObjectResult, writing value of type 'RJWalks.API.Models.DTOs.RegionDto'.
+2026-05-20 19:46:29.879 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.Delete (RJWalks.API) in 26.1477ms
+2026-05-20 19:46:29.880 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.Delete (RJWalks.API)'
+2026-05-20 19:46:29.880 -03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/regions/8c1a3ec9-5dca-4033-0400-08deb6bc391b - 200 null application/json; charset=utf-8 27.965ms
+2026-05-20 19:46:29.926 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/regions - null null
+2026-05-20 19:46:29.927 -03:00 [INF] Executing endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:46:29.927 -03:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller RJWalks.API.Controllers.RegionsController (RJWalks.API).
+2026-05-20 19:46:29.936 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImgURl]
+FROM [Regions] AS [r]
+2026-05-20 19:46:29.949 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RJWalks.API.Models.DTOs.RegionDto, RJWalks.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-20 19:46:29.951 -03:00 [INF] Executed action RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API) in 23.1891ms
+2026-05-20 19:46:29.951 -03:00 [INF] Executed endpoint 'RJWalks.API.Controllers.RegionsController.GetAll (RJWalks.API)'
+2026-05-20 19:46:29.951 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/regions - 200 null application/json; charset=utf-8 25.5952ms
